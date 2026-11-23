@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Елена Меньшикова — цифровой психолог · разборы по дате рождения</title>
+<meta name="description" content="Цифровая психология: разборы по дате рождения от психолога. Пять сфер жизни, миссия души, практики проработки. Документ, который можно перечитывать.">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#171716;
+    --panel:#1E1E1D;
+    --panel-deep:#1B1B1A;
+    --ink:#F0EFE9;
+    --ink-72:rgba(240,239,233,.72);
+    --ink-45:rgba(240,239,233,.45);
+    --mint:#B2E5B0;
+    --mint-dim:rgba(178,229,176,.45);
+    --mint-line:rgba(178,229,176,.6);
+    --bronze:#A9855C;
+    --line:rgba(240,239,233,.18);
+    --line-soft:rgba(240,239,233,.10);
+    --err:#E07A6B;
+    --f-display:'Prata',serif;
+    --f-body:'Inter',sans-serif;
+    --f-mono:'JetBrains Mono',monospace;
+    --wrap:1120px;
+    --narrow:720px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+  }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:rgba(178,229,176,.28)}
+  a{color:var(--mint);text-decoration:none}
+  :focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:4px}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  @media(min-width:760px){.wrap{padding:0 32px}}
+
+  /* ---------- header ---------- */
+  .hdr{
+    position:sticky;top:0;z-index:50;
+    transition:background .3s,border-color .3s;
+    border-bottom:1px solid transparent;
+  }
+  .hdr.scrolled{background:rgba(23,23,22,.92);backdrop-filter:blur(12px);border-bottom-color:var(--line-soft)}
+  .hdr-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+  .brand img{width:30px;height:30px;display:block}
+  .brand-name{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+  .brand-name b{font-weight:500;color:var(--ink)}
+  .brand-name span{color:var(--ink-45)}
+  @media(max-width:600px){.brand-name span{display:none}}
+  @media(max-width:420px){.brand-name{font-size:10px;letter-spacing:.14em}}
+  .nav{display:flex;align-items:center;gap:28px}
+  .nav a.navlink{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-72);transition:color .2s}
+  .nav a.navlink:hover{color:var(--mint)}
+  @media(max-width:900px){.nav .navlink{display:none}}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--f-mono);font-size:12px;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;
+    border-radius:999px;cursor:pointer;white-space:nowrap;
+    transition:transform .15s,background .2s,border-color .2s,color .2s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn .dots{display:inline-flex;gap:3px}
+  .btn .dots i{width:3px;height:3px;background:currentColor;border-radius:50%}
+  .btn-p{background:var(--mint);color:var(--bg);border:1px solid var(--mint);height:44px;padding:0 26px}
+  .btn-p:hover{background:#C4EFC2}
+  .btn-s{background:transparent;color:var(--mint);border:1px dashed var(--mint-line);height:44px;padding:0 26px}
+  .btn-s:hover{border-style:solid}
+  .hdr .btn-p{height:36px;padding:0 18px;font-size:11px}
+  .menu-link{display:none}
+  @media(max-width:560px){
+    .hdr .btn-p{display:none}
+    .menu-link{display:inline-flex}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{min-height:min(100svh - 68px, 920px);display:flex;align-items:center;padding:56px 0;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 55% 60% at 72% 42%,rgba(178,229,176,.05),transparent 70%);
+  }
+  #dust{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-grid{
+    position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:56px;align-items:center;width:100%;
+  }
+  @media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:64px}}
+  .tw{
+    font-family:var(--f-mono);font-weight:500;
+    font-size:clamp(19px,2.3vw,27px);line-height:1.5;letter-spacing:.02em;
+    min-height:calc(3 * 1.5em);color:var(--ink);
+    margin-bottom:26px;
+  }
+  .tw-line{
+    display:block;opacity:0;transform:translateY(10px);
+    transition:opacity .65s ease,transform .65s ease;
+  }
+  .tw-line.on{opacity:1;transform:none}
+  .hero-task{max-width:480px;color:var(--ink-72);font-size:16px;line-height:1.62;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .photo-zone{display:flex;justify-content:center}
+  .photo-wrap{position:relative;width:clamp(280px,34vw,430px);aspect-ratio:1;flex-shrink:0}
+  .photo-wrap .ph{
+    position:absolute;inset:0;border-radius:50%;overflow:hidden;
+    border:1px solid var(--line);z-index:2;
+  }
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;filter:grayscale(1) contrast(1.04)}
+  .ring{position:absolute;border-radius:50%;pointer-events:none}
+  .ring-a{inset:-16px;border:1px dashed rgba(178,229,176,.5);animation:spinA 36s linear infinite}
+  .ring-b{inset:-36px;border:1px solid rgba(169,133,92,.4);animation:spinB 26s linear infinite}
+  .ring-b i{position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--bronze)}
+  @keyframes spinA{to{transform:rotate(360deg)}}
+  @keyframes spinB{to{transform:rotate(-360deg)}}
+  @media(prefers-reduced-motion:reduce){.ring-a,.ring-b{animation:none}}
+
+  /* ---------- sections ---------- */
+  .sec{padding:110px 0;border-top:1px solid var(--line-soft)}
+  @media(min-width:760px){.sec{padding:140px 0}}
+  .sec-tight{padding:64px 0;border-top:1px solid var(--line-soft)}
+  @media(min-width:760px){.sec-tight{padding:72px 0}}
+  .sec-head{max-width:var(--narrow);margin-bottom:52px}
+  .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:20px}
+  h2{
+    font-family:var(--f-display);font-weight:400;
+    font-size:clamp(28px,4.2vw,48px);line-height:1.18;
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;
+  }
+  .lead{color:var(--ink-72);font-size:17px;line-height:1.62}
+  .mono-hint{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);margin-top:18px;display:block}
+
+  /* reveal-on-scroll (adds motion only when JS is on) */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+  .rv.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  /* ---------- psy ---------- */
+  .psy-def{max-width:760px;font-size:18px;line-height:1.65;color:var(--ink)}
+  .psy-note{max-width:640px;color:var(--ink-72);font-size:16px;line-height:1.62;margin-top:22px}
+
+  /* ---------- interactive split sections ---------- */
+  .split{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+  @media(min-width:940px){.split{grid-template-columns:1.05fr .95fr;gap:56px}}
+  .side-panel{
+    background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;
+    padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .side-panel .p-pos{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-45);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .side-panel .p-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);flex-shrink:0;transition:background .25s}
+  .p-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .p-ic{width:32px;height:32px;flex-shrink:0;color:var(--mint);transition:color .25s}
+  .p-ic svg{width:100%;height:100%;display:block}
+  .side-panel h3{font-family:var(--f-display);font-weight:400;font-size:23px;letter-spacing:.06em;text-transform:uppercase}
+  .side-panel p{color:var(--ink-72);font-size:16px;line-height:1.62}
+  .panel-anim{transition:opacity .22s ease}
+  .panel-anim.dim{opacity:0}
+
+  /* ---------- star svg ---------- */
+  .star-fig{max-width:440px;margin:0 auto;width:100%}
+  .star-fig svg{width:100%;height:auto;display:block;overflow:visible}
+  .star-fig .penta line{stroke:rgba(169,133,92,.66);stroke-width:1.3;fill:none}
+  .star-fig .orbit{fill:none;stroke:rgba(169,133,92,.34);stroke-width:1}
+  .pt{cursor:pointer;outline:none}
+  .pt .hit{fill:transparent}
+  .pt .core{transform-box:fill-box;transform-origin:center;transition:transform .2s;stroke:var(--bg);stroke-width:1.5}
+  .pt:hover .core,.pt:focus-visible .core{transform:scale(1.3)}
+  .pt.active .core{transform:scale(1.5)}
+  .pt .pulse{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-out infinite}
+  .pt:nth-of-type(2) .pulse{animation-delay:.6s}
+  .pt:nth-of-type(3) .pulse{animation-delay:1.2s}
+  .pt:nth-of-type(4) .pulse{animation-delay:1.8s}
+  .pt:nth-of-type(5) .pulse{animation-delay:2.4s}
+  @keyframes pulse{0%{opacity:.65;transform:scale(.5)}75%{opacity:0;transform:scale(2.6)}100%{opacity:0;transform:scale(2.6)}}
+  @media(prefers-reduced-motion:reduce){.pt .pulse{animation:none}}
+  .pt .lbl{
+    font-family:var(--f-mono);font-size:10px;letter-spacing:1.5px;
+    fill:rgba(240,239,233,.5);text-transform:uppercase;
+  }
+
+  /* ---------- pains ---------- */
+  .chips{display:flex;flex-direction:column;gap:12px}
+  .chip{
+    text-align:left;background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;
+    color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.5;
+    padding:16px 22px;cursor:pointer;transition:border-color .2s,background .2s;
+  }
+  .chip:hover{border-color:var(--line)}
+  .chip.active{border-color:var(--mint-line);border-style:solid;background:var(--panel-deep)}
+
+  /* ---------- how ---------- */
+  .how-panel{border:1px solid var(--line-soft);border-radius:20px;background:var(--panel);overflow:hidden}
+  .how-row{display:grid;grid-template-columns:1fr;gap:8px;padding:26px 30px}
+  @media(min-width:700px){.how-row{grid-template-columns:150px 1fr;gap:32px;padding:19px 40px}.how-row+.how-row{border-top:1px dashed rgba(178,229,176,.22)}}
+  .how-num{font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;color:var(--mint)}
+  .how-row h3{font-family:var(--f-display);font-weight:400;font-size:18px;letter-spacing:.04em;margin-bottom:6px}
+  .how-row p{color:var(--ink-72);font-size:15px;line-height:1.55;max-width:600px}
+
+  /* ---------- reviews ---------- */
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:700px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
+  .rev-card{
+    background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;
+    padding:32px 28px;display:flex;flex-direction:column;
+  }
+  .rev-card .q{font-size:15.5px;line-height:1.62;color:var(--ink);flex-grow:1;margin-bottom:28px}
+  .rev-card .q::before{content:"«"}
+  .rev-card .q::after{content:"»"}
+  .rev-who{display:flex;align-items:center;gap:14px;border-top:1px dashed rgba(178,229,176,.22);padding-top:24px}
+  .rev-ph{
+    width:48px;height:48px;border-radius:50%;flex-shrink:0;
+    border:1px dashed rgba(169,133,92,.55);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .rev-ph svg{width:22px;height:22px;stroke:var(--bronze);fill:none;stroke-width:1;opacity:.8}
+  .rev-who .nm{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .rev-who .rl{font-size:12.5px;color:var(--ink-45);margin-top:4px}
+  .rev-note{margin-top:36px;font-size:14px;color:var(--ink-45);max-width:640px;line-height:1.6}
+
+  /* ---------- star section: crisp star + drifting dust ---------- */
+  .starsec{position:relative;border-top:1px solid var(--line-soft);height:min(88vh,720px);overflow:hidden;display:grid;place-items:center}
+  .starsec canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .star-cap{
+    position:absolute;left:0;right:0;bottom:32px;text-align:center;
+    font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-45);
+    pointer-events:none;
+  }
+
+  /* ---------- accordions ---------- */
+  .acc{border-top:1px solid var(--line-soft)}
+  .acc-item{border-bottom:1px dashed rgba(178,229,176,.22)}
+  .acc-head{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    background:none;border:0;color:var(--ink);cursor:pointer;text-align:left;
+    padding:18px 4px;
+  }
+  .acc-name{font-family:var(--f-display);font-weight:400;font-size:clamp(16px,1.9vw,19px);letter-spacing:.05em;text-transform:uppercase}
+  .acc-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
+  .acc-price-h{font-family:var(--f-display);font-size:15px;letter-spacing:.02em;white-space:nowrap;color:var(--ink-72)}
+  .acc-icon{position:relative;width:16px;height:16px;flex-shrink:0}
+  .acc-icon::before,.acc-icon::after{
+    content:"";position:absolute;background:var(--mint);transition:transform .3s;
+  }
+  .acc-icon::before{left:7px;top:0;width:2px;height:16px}
+  .acc-icon::after{left:0;top:7px;width:16px;height:2px}
+  .acc-item.open .acc-icon::before{transform:rotate(90deg)}
+  .acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+  .acc-item.open .acc-body{grid-template-rows:1fr}
+  .acc-body-in{min-height:0;overflow:hidden}
+  .acc-body-c{padding:2px 4px 26px;max-width:640px}
+  .acc-body-c p{color:var(--ink-72);font-size:15px;line-height:1.6;margin-bottom:16px}
+  .acc-body-c p b{color:var(--ink);font-weight:500}
+  .acc .btn-s{height:40px;font-size:11px}
+  @media(max-width:560px){
+    .acc-head{flex-wrap:wrap}
+    .acc-right{margin-left:auto}
+  }
+
+  /* ---------- apply ---------- */
+  .apply-in{display:grid;grid-template-columns:1fr;gap:56px}
+  @media(min-width:900px){.apply-in{grid-template-columns:1fr 440px;gap:80px;align-items:start}}
+  .apply-left .lead{max-width:480px;margin-bottom:32px}
+  .apply-tg{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
+  .apply-tg::after{content:"↗";font-size:13px}
+  .form-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:36px 30px}
+  @media(min-width:700px){.form-card{padding:40px}}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45);margin-bottom:10px}
+  .field input,.field select,.field textarea{
+    width:100%;background:var(--panel-deep);border:1px solid #3A3A38;border-radius:12px;
+    color:var(--ink);font-family:var(--f-body);font-size:15px;
+    padding:13px 16px;transition:border-color .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--mint)}
+  .field textarea{min-height:96px;resize:vertical}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(240,239,233,.35)}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23B2E5B0' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .field .err-msg{display:none;color:var(--err);font-size:12.5px;margin-top:8px}
+  .field.invalid .err-msg{display:block}
+  .field.invalid input{border-color:var(--err)}
+  .form-card .btn{width:100%;height:50px;font-size:12px;margin-top:4px}
+  .form-note{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);text-align:center;margin-top:16px;line-height:1.7}
+  .form-ok{display:none;margin-top:18px;border:1px dashed var(--mint-line);border-radius:12px;padding:16px;font-size:14px;color:var(--ink-72);line-height:1.6}
+  .form-ok.show{display:block}
+  .form-ok b{color:var(--mint);font-weight:500}
+
+  /* ---------- footer ---------- */
+  .ftr{border-top:1px solid var(--line-soft);padding:56px 0 44px}
+  .ftr-in{display:flex;flex-direction:column;gap:28px;align-items:flex-start}
+  @media(min-width:700px){.ftr-in{flex-direction:row;justify-content:space-between;align-items:center}}
+  .ftr-brand{display:flex;align-items:center;gap:12px}
+  .ftr-brand img{width:26px;height:26px}
+  .ftr-brand span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45)}
+  .ftr-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+  .ftr-links a{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);transition:color .2s}
+  .ftr-links a:hover{color:var(--mint)}
+  .ftr-links .btn-s{height:36px;font-size:10.5px;padding:0 20px}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Елена Меньшикова — на главную">
+      <img src="assets/logo-mark.png" alt="Логотип">
+      <span class="brand-name"><b>ЕЛЕНА МЕНЬШИКОВА</b> <span>· ЦИФРОВОЙ ПСИХОЛОГ</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="navlink" href="#method">Метод</a>
+      <a class="navlink" href="#formats">Форматы</a>
+      <a class="navlink" href="#faq">Вопросы</a>
+      <a class="btn btn-p" href="#apply"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Записаться</a>
+      <a class="btn btn-s menu-link" href="#apply">Записаться</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="dust" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="tw" aria-live="off"><span class="tw-line" id="twLine">Дата рождения — это ключ</span></p>
+        <p class="hero-task">Моя задача — бережно перевести расчёт на язык вашей реальной жизни. Не выдать готовый сценарий, а помочь заметить опоры, внутренние противоречия и пространство для выбора.</p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#apply"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Записаться на разбор</a>
+          <a class="btn btn-s" href="#how">Как проходит работа</a>
+        </div>
+      </div>
+      <div class="photo-zone">
+        <div class="photo-wrap">
+          <span class="ring ring-a" aria-hidden="true"></span>
+          <span class="ring ring-b" aria-hidden="true"><i></i></span>
+          <span class="ph"><img src="assets/elena.jpg" alt="Елена Меньшикова, цифровой психолог"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL PSYCHOLOGY -->
+  <section class="sec rv" id="psy">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Цифровая психология</span>
+        <h2>Не набор чисел. Разговор о том, что происходит сейчас.</h2>
+      </div>
+      <p class="psy-def">Цифровая психология — это метод, где точный расчёт по дате рождения соединяется с психологией. Числа показывают программу: характер, сильные стороны, сценарии, которые повторяются. А дальше включается психология — то, что вы с этой программой делаете.</p>
+      <p class="psy-note">Расчёт точный, выводы — про человека. Поэтому разбор читается как разговор с психологом: с вопросами, объяснениями и практиками, которые можно применить сразу.</p>
+    </div>
+  </section>
+
+  <!-- METHOD: INTERACTIVE STAR -->
+  <section class="sec rv" id="method" style="padding:56px 0">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:26px">
+        <span class="kicker">Метод пятиконечной звезды</span>
+        <h2 style="font-size:clamp(24px,3.4vw,36px);margin-bottom:12px">5 сфер. Одна карта вашей жизни.</h2>
+        <p class="lead" style="font-size:15.5px">Ваша дата превращается в звезду: пять сфер жизни и миссия в центре. В разборе каждая сфера — отдельная глава с числами, расшифровкой и практикой.</p>
+        <span class="mono-hint" style="margin-top:12px">Нажмите на точку — раскроется пояснение</span>
+      </div>
+      <div class="split">
+        <div class="star-fig">
+          <svg viewBox="0 0 440 440" role="img" aria-label="Звезда пяти сфер: духовность, реализация, отношения, здоровье, личность и миссия в центре">
+            <circle class="orbit" cx="220" cy="220" r="150"/>
+            <g class="penta">
+              <line x1="220" y1="70" x2="308.2" y2="341.4"/>
+              <line x1="308.2" y1="341.4" x2="77.3" y2="173.7"/>
+              <line x1="77.3" y1="173.7" x2="362.7" y2="173.7"/>
+              <line x1="362.7" y1="173.7" x2="131.8" y2="341.4"/>
+              <line x1="131.8" y1="341.4" x2="220" y2="70"/>
+            </g>
+            <g class="pt" data-s="duh" role="button" tabindex="0" aria-label="Духовность — верх">
+              <circle class="hit" cx="220" cy="70" r="30"/>
+              <circle class="pulse" cx="220" cy="70" r="9" fill="none" stroke="#B9C6F2" stroke-width="1"/>
+              <circle class="core" cx="220" cy="70" r="7" fill="#B9C6F2"/>
+              <text class="lbl" x="220" y="42" text-anchor="middle">Духовность</text>
+            </g>
+            <g class="pt" data-s="real" role="button" tabindex="0" aria-label="Реализация — право">
+              <circle class="hit" cx="362.7" cy="173.7" r="30"/>
+              <circle class="pulse" cx="362.7" cy="173.7" r="9" fill="none" stroke="#A78CE8" stroke-width="1"/>
+              <circle class="core" cx="362.7" cy="173.7" r="7" fill="#A78CE8"/>
+              <text class="lbl" x="378" y="168" text-anchor="start">Реализация</text>
+            </g>
+            <g class="pt" data-s="otn" role="button" tabindex="0" aria-label="Отношения — низ справа">
+              <circle class="hit" cx="308.2" cy="341.4" r="30"/>
+              <circle class="pulse" cx="308.2" cy="341.4" r="9" fill="none" stroke="#58CFB2" stroke-width="1"/>
+              <circle class="core" cx="308.2" cy="341.4" r="7" fill="#58CFB2"/>
+              <text class="lbl" x="322" y="380" text-anchor="start">Отношения</text>
+            </g>
+            <g class="pt" data-s="zdor" role="button" tabindex="0" aria-label="Здоровье — низ слева">
+              <circle class="hit" cx="131.8" cy="341.4" r="30"/>
+              <circle class="pulse" cx="131.8" cy="341.4" r="9" fill="none" stroke="#E8A0B8" stroke-width="1"/>
+              <circle class="core" cx="131.8" cy="341.4" r="7" fill="#E8A0B8"/>
+              <text class="lbl" x="118" y="380" text-anchor="end">Здоровье</text>
+            </g>
+            <g class="pt" data-s="lich" role="button" tabindex="0" aria-label="Личность — лево">
+              <circle class="hit" cx="77.3" cy="173.7" r="30"/>
+              <circle class="pulse" cx="77.3" cy="173.7" r="9" fill="none" stroke="#F0B478" stroke-width="1"/>
+              <circle class="core" cx="77.3" cy="173.7" r="7" fill="#F0B478"/>
+              <text class="lbl" x="62" y="168" text-anchor="end">Личность</text>
+            </g>
+            <g class="pt active" data-s="mis" role="button" tabindex="0" aria-label="Миссия души — центр">
+              <circle class="hit" cx="220" cy="220" r="30"/>
+              <circle class="pulse" cx="220" cy="220" r="9" fill="none" stroke="#EEB477" stroke-width="1"/>
+              <circle class="core" cx="220" cy="220" r="9" fill="#EEB477"/>
+            </g>
+          </svg>
+        </div>
+        <div class="side-panel" aria-live="polite">
+          <div class="panel-anim" id="methodPanel">
+            <span class="p-pos"><span class="p-dot" id="methodDot"></span><span id="methodPos">ЦЕНТР</span></span>
+            <div class="p-head">
+              <span class="p-ic" id="methodIcon"></span>
+              <h3 id="methodTitle">Миссия души</h3>
+            </div>
+            <p id="methodText">Зачем всё это вам: точка сборки карты, вокруг которой стоят остальные числа.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS -->
+  <section class="sec rv" id="pains">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Начать с вопроса</span>
+        <h2>Что сейчас хочется понять яснее?</h2>
+        <span class="mono-hint">Нажмите на фразу — подходящий формат раскроется рядом</span>
+      </div>
+      <div class="split" style="align-items:start;gap:32px">
+        <div class="chips" id="painChips"></div>
+        <div class="side-panel" style="min-height:220px" aria-live="polite">
+          <div class="panel-anim" id="painPanel">
+            <span class="p-pos"><span class="p-dot" id="painDot"></span><span id="painName">—</span></span>
+            <p id="painText">Выберите фразу — покажу, какой разбор подойдёт.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="sec-tight rv" id="how">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:26px">
+        <span class="kicker">Как проходит работа</span>
+        <h2 style="font-size:clamp(24px,3.4vw,36px);margin-bottom:12px">Четыре шага. Один документ.</h2>
+      </div>
+      <div class="how-panel">
+        <div class="how-row">
+          <span class="how-num">01 · заявка</span>
+          <div>
+            <h3>Вы оставляете заявку</h3>
+            <p>Имя и дата рождения. Если есть запрос — опишите его своими словами, это помогает смотреть в нужную сторону.</p>
+          </div>
+        </div>
+        <div class="how-row">
+          <span class="how-num">02 · расчёт</span>
+          <div>
+            <h3>Я делаю расчёт и уточняю детали</h3>
+            <p>Считаю карту по дате рождения. Если для точности важно — задам один-два вопроса в переписке.</p>
+          </div>
+        </div>
+        <div class="how-row">
+          <span class="how-num">03 · документ</span>
+          <div>
+            <h3>Получаете разбор</h3>
+            <p>Фирменный PDF по главам + живые пояснения голосом. Это не «гадание» — расшифровка вашей карты с практиками.</p>
+          </div>
+        </div>
+        <div class="how-row">
+          <span class="how-num">04 · перечитывание</span>
+          <div>
+            <h3>Возвращаетесь к документу</h3>
+            <p>Через месяц или через год разбор снова говорит с вами: он не устаревает, потому что карта не меняется.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec rv" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Отзывы</span>
+        <h2>Клиенты</h2>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card">
+          <p class="q">Я не ожидала такого объёма информации, и всё прям про меня, как оно есть. Есть рекомендации, как сделать проработку. Это был золотой пинок.</p>
+          <div class="rev-who">
+            <span class="rev-ph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></span>
+            <div>
+              <div class="nm">Клиент</div>
+              <div class="rl">полный разбор личности</div>
+            </div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <p class="q">Такие разборы невероятно полезны! Это настоящий путеводитель по жизненному пути. Ещё не раз всё буду перечитывать.</p>
+          <div class="rev-who">
+            <span class="rev-ph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></span>
+            <div>
+              <div class="nm">Клиент</div>
+              <div class="rl">полный разбор</div>
+            </div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <p class="q">Теперь я понимаю, почему у меня в жизни происходили определённые ситуации. Теперь всё ясно, почему я была не замужем.</p>
+          <div class="rev-who">
+            <span class="rev-ph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></span>
+            <div>
+              <div class="nm">Клиент</div>
+              <div class="rl">разбор отношений</div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="rev-note">Цитаты — из реальных сообщений клиентов в Telegram, публикуются с их слов без имён. Здесь оставлено место для фотографий: они появятся, когда клиенты дадут согласие.</p>
+    </div>
+  </section>
+
+  <!-- STAR -->
+  <section class="starsec" id="star" aria-label="Карта пяти сфер — звезда из частиц">
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+    <span class="star-cap">Карта пяти сфер · пять точек · одна миссия</span>
+  </section>
+
+  <!-- FORMATS -->
+  <section class="sec rv" id="formats">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Форматы разборов</span>
+        <h2>Выберите тему. Детали внутри.</h2>
+        <span class="mono-hint">Нажмите на формат, чтобы увидеть описание</span>
+      </div>
+      <div class="acc" id="formatsAcc">
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Полный разбор пяти сфер</span>
+            <span class="acc-right"><span class="acc-price-h">8 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Личность, род, реализация, отношения, здоровье и миссия души: вся карта целиком, две недели работы. Документ + живые пояснения голосом. Возвращаться к нему можно через месяц и через год — он не устаревает. <b>В месяц — только 2 места.</b></p>
+            <button class="btn btn-s fmt-pay" data-service="Полный разбор пяти сфер — 8 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Разбор одной сферы</span>
+            <span class="acc-right"><span class="acc-price-h">от 3 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Одна глава карты: числа, расшифровка и практика проработки. <b>Личность, духовность или здоровье — 3 000 ₽.</b> <b>Реализация или отношения — 5 000 ₽:</b> эти сферы считаются глубже.</p>
+            <button class="btn btn-s fmt-pay" data-service="Разбор одной сферы: личность, духовность, здоровье — 3 000 ₽">Оплатить — 3 000 ₽</button>
+            <button class="btn btn-s fmt-pay" data-service="Разбор одной сферы: реализация, отношения — 5 000 ₽" style="margin-left:12px">Оплатить — 5 000 ₽</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Личный код успеха</span>
+            <span class="acc-right"><span class="acc-price-h">4 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Где утекают ваша энергия и деньги — и как их вернуть. Короткий разбор с конкретными выводами.</p>
+            <button class="btn btn-s fmt-pay" data-service="Личный код успеха — 4 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Прогноз на год</span>
+            <span class="acc-right"><span class="acc-price-h">3 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Помесячная карта года: где подъёмы, где беречь силы и что делать в каждом периоде. Готов за 3–4 дня.</p>
+            <button class="btn btn-s fmt-pay" data-service="Прогноз на год — 3 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Совместимость</span>
+            <span class="acc-right"><span class="acc-price-h">5 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Динамика пары, привычные сценарии общения, точки напряжения и ресурсы двух людей. По датам рождения обоих.</p>
+            <button class="btn btn-s fmt-pay" data-service="Совместимость — 5 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Детская матрица</span>
+            <span class="acc-right"><span class="acc-price-h">5 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Особенности характера ребёнка, таланты, чувствительные зоны и подходящий язык поддержки. Как поддержать, не сломав природу.</p>
+            <button class="btn btn-s fmt-pay" data-service="Детская матрица — 5 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Чакральная система</span>
+            <span class="acc-right"><span class="acc-price-h">5 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Символический разбор ресурса и внутреннего баланса: где зажато и почему. Формат не является медицинской диагностикой.</p>
+            <button class="btn btn-s fmt-pay" data-service="Чакральная система — 5 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Семейный комплект</span>
+            <span class="acc-right"><span class="acc-price-h">15 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Полный разбор + партнёр + детская матрица: одна карта для всей семьи, выгоднее, чем по отдельности.</p>
+            <button class="btn btn-s fmt-pay" data-service="Семейный комплект — 15 000 ₽">Оплатить</button>
+          </div></div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Трансформационная игра</span>
+            <span class="acc-right"><span class="acc-price-h">от 3 000 ₽</span><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Практический игровой формат, который помогает увидеть привычный сценарий и найти новые варианты действия. <b>Индивидуально — 5 000 ₽, в группе — 3 000 ₽.</b></p>
+            <button class="btn btn-s fmt-pay" data-service="Трансформационная игра (индивидуально — 5 000 ₽ / в группе — 3 000 ₽)">Оплатить</button>
+          </div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec rv" id="faq" style="padding-top:0;border-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Вопросы и ответы</span>
+        <h2>Вопросы. Ответы.</h2>
+      </div>
+      <div class="acc" id="faqAcc">
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Разбор предсказывает будущее?</span>
+            <span class="acc-right"><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Нет. Разбор не угадывает исход и не говорит «так и будет». Он показывает программу: почему сценарий повторяется и где у вас запас прочности. Что с этим делать — выбираете вы.</p>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Что понадобится для расчёта?</span>
+            <span class="acc-right"><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Только дата рождения. Для совместимости — даты двоих, для детской матрицы — дата рождения ребёнка. Время и место рождения не нужны.</p>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Как проходит консультация?</span>
+            <span class="acc-right"><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Вы оставляете заявку, я делаю расчёт и уточняю детали в переписке. Дальше вы получаете документ и живые пояснения голосом — в удобное вам время, всё в Telegram.</p>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-name">Это заменяет работу врача или психотерапевта?</span>
+            <span class="acc-right"><span class="acc-icon" aria-hidden="true"></span></span>
+          </button>
+          <div class="acc-body"><div class="acc-body-in"><div class="acc-body-c">
+            <p>Нет. Разбор — про самопонимание: он даёт язык и опоры, но не является диагнозом, лечением или психотерапией. Если вы работаете со специалистом, разбор его не заменяет, а может дополнить.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section class="sec rv" id="apply">
+    <div class="wrap apply-in">
+      <div class="apply-left">
+        <span class="kicker">Запись</span>
+        <h2>Начните с одного вопроса.</h2>
+        <p class="lead">Напишите, что в жизни повторяется, — отвечу, чем поможет разбор, и подтвердим состав и стоимость. Без обязательств.</p>
+        <a class="apply-tg" href="https://t.me/LenaMenshikova17" target="_blank" rel="noopener">Написать в Telegram напрямую</a>
+      </div>
+      <form class="form-card" id="applyForm" novalidate>
+        <div class="field" id="fName">
+          <label for="inName">Ваше имя</label>
+          <input type="text" id="inName" name="name" placeholder="Как к вам обращаться" autocomplete="name">
+          <span class="err-msg">Подскажите, как вас зовут</span>
+        </div>
+        <div class="field" id="fDate">
+          <label for="inDate">Дата рождения</label>
+          <input type="date" id="inDate" name="bday" min="1920-01-01" max="2026-12-31">
+          <span class="err-msg">Нужна дата рождения — по ней считается карта</span>
+        </div>
+        <div class="field" id="fContact">
+          <label for="inContact">Контакт для связи</label>
+          <input type="text" id="inContact" name="contact" placeholder="@username в Telegram или телефон" autocomplete="tel">
+          <span class="err-msg">Оставьте контакт — куда вам ответить</span>
+        </div>
+        <div class="field">
+          <label for="inService">Что разобрать</label>
+          <select id="inService" name="service">
+            <option>Пока не знаю — нужна консультация</option>
+            <option>Полный разбор пяти сфер — 8 000 ₽</option>
+            <option>Разбор одной сферы: личность, духовность, здоровье — 3 000 ₽</option>
+            <option>Разбор одной сферы: реализация, отношения — 5 000 ₽</option>
+            <option>Личный код успеха — 4 000 ₽</option>
+            <option>Прогноз на год — 3 000 ₽</option>
+            <option>Совместимость — 5 000 ₽</option>
+            <option>Детская матрица — 5 000 ₽</option>
+            <option>Чакральная система — 5 000 ₽</option>
+            <option>Семейный комплект — 15 000 ₽</option>
+            <option>Трансформационная игра (индивидуально — 5 000 ₽ / в группе — 3 000 ₽)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="inQ">Ваш вопрос</label>
+          <textarea id="inQ" name="question" placeholder="Что повторяется в жизни? Что сейчас важно решить?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-p"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Отправить заявку</button>
+        <p class="form-note">Заявка уйдёт в Telegram — отвечу лично</p>
+        <div class="form-ok" id="formOk" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-in">
+      <div class="ftr-brand">
+        <img src="assets/logo-mark.png" alt="Логотип">
+        <span>ЕЛЕНА МЕНЬШИКОВА · ЦИФРОВОЙ ПСИХОЛОГ</span>
+      </div>
+      <div class="ftr-links">
+        <a href="https://t.me/LenaMenshikova17" target="_blank" rel="noopener">Telegram</a>
+        <a href="#formats">Форматы</a>
+        <a href="#faq">Вопросы</a>
+        <a class="btn btn-s" href="#top">Наверх</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* header */
+  var hdr = document.getElementById("hdr");
+  function onScroll(){ hdr.classList.toggle("scrolled", window.scrollY > 24); }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* hero: crossfade sentences */
+  var twEl = document.getElementById("twLine");
+  var sentences = [
+    "Дата рождения — это ключ",
+    "Он не решает за вас",
+    "Он показывает ваши сильные стороны",
+    "И объясняет, почему всё идёт по кругу",
+    "Пять сфер складываются в одну картину",
+    "Не судьба. Пространство для выбора"
+  ];
+  if (reduced){
+    twEl.textContent = sentences[5];
+    twEl.classList.add("on");
+  } else {
+    var twIdx = 0;
+    twEl.classList.add("on");
+    setInterval(function(){
+      twEl.classList.remove("on");
+      setTimeout(function(){
+        twIdx = (twIdx + 1) % sentences.length;
+        twEl.textContent = sentences[twIdx];
+        twEl.classList.add("on");
+      }, 700);
+    }, 3400);
+  }
+
+  /* hero dust */
+  var hero = document.querySelector(".hero");
+  var dust = document.getElementById("dust");
+  var dctx = dust.getContext("2d");
+  var motes = [], dW = 0, dH = 0;
+  function dustResize(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    dW = hero.clientWidth; dH = hero.clientHeight;
+    dust.width = dW*dpr; dust.height = dH*dpr;
+    dctx.setTransform(dpr,0,0,dpr,0,0);
+    if (!motes.length){
+      for (var i=0;i<70;i++){
+        var c = Math.random();
+        motes.push({
+          x: Math.random()*dW, y: Math.random()*dH,
+          vx: (Math.random()-.5)*0.22, vy: (Math.random()-.5)*0.18,
+          r: Math.random()<0.15 ? 1.4 : 0.7+Math.random()*0.6,
+          col: c<0.8 ? [240,239,233] : (c<0.92 ? [178,229,176] : [169,133,92]),
+          a: 0.08+Math.random()*0.22,
+          ph: Math.random()*6.28, sp: 0.3+Math.random()*0.8
+        });
+      }
+    }
+  }
+  function dustDraw(now){
+    dctx.clearRect(0,0,dW,dH);
+    for (var i=0;i<motes.length;i++){
+      var m = motes[i];
+      if (!reduced){
+        m.x += m.vx; m.y += m.vy;
+        if (m.x < -4) m.x = dW+4; if (m.x > dW+4) m.x = -4;
+        if (m.y < -4) m.y = dH+4; if (m.y > dH+4) m.y = -4;
+      }
+      var a = reduced ? m.a : m.a * (0.6 + 0.4*Math.sin(now/1000*m.sp + m.ph));
+      dctx.beginPath();
+      dctx.fillStyle = "rgba("+m.col[0]+","+m.col[1]+","+m.col[2]+","+a.toFixed(3)+")";
+      dctx.arc(m.x, m.y, m.r, 0, 6.283);
+      dctx.fill();
+    }
+    if (!reduced) requestAnimationFrame(dustDraw);
+  }
+  dustResize();
+  window.addEventListener("resize", function(){ motes = []; dustResize(); if (reduced) dustDraw(0); }, {passive:true});
+  if (reduced){ dustDraw(0); } else { requestAnimationFrame(dustDraw); }
+
+  /* reveal on scroll */
+  var rvEls = document.querySelectorAll("main .rv");
+  if (!reduced && "IntersectionObserver" in window){
+    var rvIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("on"); rvIO.unobserve(en.target); }
+      });
+    }, {threshold:0.12});
+    rvEls.forEach(function(el){ rvIO.observe(el); });
+  } else {
+    rvEls.forEach(function(el){ el.classList.add("on"); });
+  }
+
+  /* method star */
+  var SPHERES = {
+    duh:  { pos:"ВЕРХ",      color:"#B9C6F2", title:"Духовность",
+      text:"Что во мне действительно моё: характер, сильные стороны и то, что может стать опорой.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="16" cy="19" r="7"/><path d="M16 12V4"/><circle cx="16" cy="3" r="1.4" fill="currentColor" stroke="none"/></svg>' },
+    lich: { pos:"ЛЕВО",      color:"#F0B478", title:"Личность",
+      text:"Привычные сценарии выбора — почему вы решаете так, а не иначе, и что за этим стоит.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 28v-6c4-1 6-4.5 6-9 0-6-4.5-10-10-10S6 7.5 6 13.5c0 3.5 1.5 6.5 4 8.5l-1.5 6"/></svg>' },
+    real: { pos:"ПРАВО",     color:"#A78CE8", title:"Реализация",
+      text:"Дело и деньги: где ваша сила просится наружу и что ей мешает. Точка роста профессии.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 25l8-8 5 4L27 10"/><path d="M21 10h6v6"/></svg>' },
+    otn:  { pos:"НИЗ-ПРАВО", color:"#58CFB2", title:"Отношения",
+      text:"Сценарии между «я» и «мы»: границы, близость, совместимость и то, что повторяется.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="16" r="8"/><circle cx="20" cy="16" r="8"/></svg>' },
+    zdor: { pos:"НИЗ-ЛЕВО",  color:"#E8A0B8", title:"Здоровье",
+      text:"Где тело сигнализирует раньше слов: ресурс, расход энергии и точки восстановления.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 17h6l3-8 6 14 4-9 3 3h4"/></svg>' },
+    mis:  { pos:"ЦЕНТР",     color:"#EEB477", title:"Миссия души",
+      text:"Зачем всё это вам: точка сборки карты, вокруг которой стоят остальные числа.",
+      icon:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.8" fill="currentColor" stroke="none"/></svg>' }
+  };
+  var mPanel = document.getElementById("methodPanel");
+  var mPos = document.getElementById("methodPos");
+  var mTitle = document.getElementById("methodTitle");
+  var mText = document.getElementById("methodText");
+  var mDot = document.getElementById("methodDot");
+  var mIcon = document.getElementById("methodIcon");
+  var mPts = document.querySelectorAll("#method .pt");
+
+  function selectSphere(key){
+    var d = SPHERES[key];
+    if (!d) return;
+    mPts.forEach(function(p){ p.classList.toggle("active", p.getAttribute("data-s") === key); });
+    mPanel.classList.add("dim");
+    setTimeout(function(){
+      mPos.textContent = d.pos;
+      mTitle.textContent = d.title;
+      mText.textContent = d.text;
+      mDot.style.background = d.color;
+      mIcon.innerHTML = d.icon;
+      mIcon.style.color = d.color;
+      mPanel.classList.remove("dim");
+    }, reduced ? 0 : 200);
+  }
+  mIcon.innerHTML = SPHERES.mis.icon;
+  mIcon.style.color = SPHERES.mis.color;
+  mPts.forEach(function(p){
+    var key = p.getAttribute("data-s");
+    p.addEventListener("click", function(){ selectSphere(key); });
+    p.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " "){ e.preventDefault(); selectSphere(key); }
+    });
+  });
+
+  /* pains */
+  var PAINS = [
+    { q:"Отношения повторяются по одному сценарию",
+      name:"Совместимость · 5 000 ₽",
+      text:"Динамика пары, привычные сценарии общения, точки напряжения и ресурсы двух людей. Можно начать точнее — с разбора сферы «Отношения» (5 000 ₽)." },
+    { q:"Не понимаю, куда двигаться в работе и деньгах",
+      name:"Разбор сферы «Реализация» · 5 000 ₽",
+      text:"Дело и деньги: где ваша сила просится наружу и что ей мешает. Для полной картины — полный разбор пяти сфер." },
+    { q:"Живу для всех, кроме себя",
+      name:"Разбор сферы «Личность» или «Духовность» · 3 000 ₽",
+      text:"Характер, сильные стороны и привычные сценарии выбора. Мягкий вход, чтобы снова услышать себя и вернуть опору." },
+    { q:"Хочу понять, что будет в этом году",
+      name:"Прогноз на год · 3 000 ₽",
+      text:"Помесячная карта года: где подъёмы, где беречь силы и что делать в каждом периоде." },
+    { q:"Хочу лучше понимать своего ребёнка",
+      name:"Детская матрица · 5 000 ₽",
+      text:"Особенности характера, таланты, чувствительные зоны и подходящий язык поддержки." },
+    { q:"Копаю себя, но не знаю, верно ли иду",
+      name:"Полный разбор пяти сфер · 8 000 ₽",
+      text:"Вся карта целиком: пять сфер и миссия в центре. Снимает вопрос «верно ли иду» — показывает картину и точку сборки. В месяц — 2 места." },
+    { q:"Где утекают энергия и деньги",
+      name:"Личный код успеха · 4 000 ₽",
+      text:"Короткий разбор с конкретными выводами: где расход и как вернуть ресурс." }
+  ];
+  var chipsBox = document.getElementById("painChips");
+  var pPanel = document.getElementById("painPanel");
+  var pName = document.getElementById("painName");
+  var pText = document.getElementById("painText");
+  var pDot = document.getElementById("painDot");
+  PAINS.forEach(function(p, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip" + (i === 0 ? " active" : "");
+    b.textContent = p.q;
+    b.addEventListener("click", function(){
+      chipsBox.querySelectorAll(".chip").forEach(function(c){ c.classList.remove("active"); });
+      b.classList.add("active");
+      pPanel.classList.add("dim");
+      setTimeout(function(){
+        pName.textContent = p.name;
+        pText.textContent = p.text;
+        pPanel.classList.remove("dim");
+      }, reduced ? 0 : 180);
+    });
+    chipsBox.appendChild(b);
+  });
+  pName.textContent = PAINS[0].name;
+  pText.textContent = PAINS[0].text;
+  pDot.style.background = "var(--mint)";
+
+  /* accordions */
+  document.querySelectorAll(".acc-item").forEach(function(item){
+    var head = item.querySelector(".acc-head");
+    head.addEventListener("click", function(){
+      var open = item.classList.toggle("open");
+      head.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  /* payment buttons -> prefill form */
+  var serviceSel = document.getElementById("inService");
+  document.querySelectorAll(".fmt-pay").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var want = btn.getAttribute("data-service");
+      for (var i=0;i<serviceSel.options.length;i++){
+        if (serviceSel.options[i].text === want){ serviceSel.selectedIndex = i; break; }
+      }
+      document.getElementById("apply").scrollIntoView({behavior: reduced ? "auto" : "smooth"});
+      setTimeout(function(){ document.getElementById("inName").focus({preventScroll:true}); }, 600);
+    });
+  });
+
+  /* star section: звезда собирается из частиц и медленно вращается */
+  var sec = document.getElementById("star");
+  var cv = document.getElementById("starCanvas");
+  var ctx = cv.getContext("2d");
+  var dots = [];
+  var W = 0, H = 0, DPR = 1;
+  var rot = 0, assembled = false, startT = null;
+
+  function rand(a,b){ return a + Math.random()*(b-a); }
+
+  function buildDots(){
+    dots = [];
+    var cx = W/2, cy = H/2 - H*0.04;
+    var R = Math.min(W, H) * 0.36;
+    var r = R * 0.382;
+    var N = 5;
+    function addDot(x, y, weight){
+      var col = Math.random();
+      var color;
+      if (col < 0.78) color = [240,239,233, rand(0.32,0.68)];
+      else if (col < 0.90) color = [240,239,233, rand(0.14,0.24)];
+      else if (col < 0.96) color = [178,229,176, rand(0.6,0.9)];
+      else color = [169,133,92, rand(0.6,0.9)];
+      var size = Math.random() < 0.14 ? rand(1.6,2.2) : rand(0.8,1.4);
+      dots.push({
+        tx:x, ty:y,
+        sx: cx + rand(-W*0.55, W*0.55),
+        sy: cy + rand(-H*0.55, H*0.55),
+        size:size, color:color,
+        delay: Math.random()*0.5 + weight*0.4,
+        phase: rand(0, Math.PI*2),
+        speed: rand(0.4, 1.0)
+      });
+    }
+    var verts = [];
+    for (var i=0;i<N;i++){
+      var a = -Math.PI/2 + i * 2*Math.PI/N;
+      verts.push([cx + R*Math.cos(a), cy + R*Math.sin(a)]);
+      var ai = a + Math.PI/N;
+      verts.push([cx + r*Math.cos(ai), cy + r*Math.sin(ai)]);
+    }
+    var perEdge = Math.round(26);
+    for (var e=0;e<verts.length;e++){
+      var p1 = verts[e], p2 = verts[(e+1)%verts.length];
+      for (var k=0;k<perEdge;k++){
+        var t = k/perEdge;
+        addDot(p1[0]+(p2[0]-p1[0])*t, p1[1]+(p2[1]-p1[1])*t, 0.5);
+      }
+    }
+    [R*0.62, R*1.22].forEach(function(rad, ri){
+      var n = Math.round(rad*3.6);
+      for (var i=0;i<n;i++){
+        var a = (i/n)*Math.PI*2;
+        var rr = rad + rand(-2,2);
+        addDot(cx+rr*Math.cos(a), cy+rr*Math.sin(a), ri===0?0.2:0.8);
+      }
+    });
+    for (var m=0;m<46;m++){
+      addDot(cx+rand(-14,14), cy+rand(-14,14), 0.1);
+    }
+    for (var s=0;s<70;s++){
+      addDot(rand(W*0.08, W*0.92), rand(H*0.06, H*0.94), 1);
+    }
+  }
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio||1, 2);
+    W = sec.clientWidth; H = sec.clientHeight;
+    cv.width = W*DPR; cv.height = H*DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    buildDots();
+    if (reduced || assembled){ rot = 0; }
+  }
+
+  function ease(t){ return 1 - Math.pow(1-t, 3); }
+
+  function draw(now){
+    ctx.clearRect(0,0,W,H);
+    var cx = W/2, cy = H/2 - H*0.04;
+    if (!reduced && assembled && now){ rot += 0.00035; }
+    ctx.save();
+    ctx.translate(cx, cy); ctx.rotate(rot); ctx.translate(-cx, -cy);
+    var t0 = startT || 0;
+    for (var i=0;i<dots.length;i++){
+      var d = dots[i];
+      var x = d.tx, y = d.ty, a = d.color[3];
+      if (!reduced && assembled){
+        a = d.color[3] * (0.75 + 0.25*Math.sin(now/1000*d.speed + d.phase));
+      } else if (!reduced && startT){
+        var p = (now - t0)/1000 - d.delay;
+        if (p < 0){ continue; }
+        var e = ease(Math.min(p/1.1, 1));
+        if (e < 1){
+          x = d.sx + (d.tx - d.sx)*e;
+          y = d.sy + (d.ty - d.sy)*e;
+          a = d.color[3] * e;
+        }
+      }
+      ctx.beginPath();
+      ctx.fillStyle = "rgba("+d.color[0]+","+d.color[1]+","+d.color[2]+","+a.toFixed(3)+")";
+      ctx.arc(x, y, d.size, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+    if (startT && !assembled && now - t0 > 2100){ assembled = true; }
+    requestAnimationFrame(draw);
+  }
+
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          if (!startT && !reduced){ startT = performance.now(); }
+        }
+      });
+    }, {threshold:0.2, rootMargin:"0px 0px -10% 0px"}).observe(sec);
+  } else { startT = performance.now(); }
+
+  window.addEventListener("resize", resize, {passive:true});
+  resize();
+  if (reduced){ assembled = true; }
+  requestAnimationFrame(draw);
+
+  /* form -> telegram */
+  var form = document.getElementById("applyForm");
+  var fName = document.getElementById("fName");
+  var fDate = document.getElementById("fDate");
+  var fContact = document.getElementById("fContact");
+  var inName = document.getElementById("inName");
+  var inDate = document.getElementById("inDate");
+  var inContact = document.getElementById("inContact");
+  var inQ = document.getElementById("inQ");
+  var okBox = document.getElementById("formOk");
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    fName.classList.toggle("invalid", !inName.value.trim());
+    fDate.classList.toggle("invalid", !inDate.value);
+    fContact.classList.toggle("invalid", !inContact.value.trim());
+    if (!inName.value.trim() || !inDate.value || !inContact.value.trim()) return;
+
+    var d = inDate.value.split("-");
+    var dateRu = d[2] + "." + d[1] + "." + d[0];
+    var text = "Заявка с сайта\n" +
+      "Имя: " + inName.value.trim() + "\n" +
+      "Контакт: " + inContact.value.trim() + "\n" +
+      "Дата рождения: " + dateRu + "\n" +
+      "Услуга: " + serviceSel.value + "\n" +
+      (inQ.value.trim() ? "Вопрос: " + inQ.value.trim() : "Вопрос: —");
+
+    function done(msg){
+      okBox.innerHTML = msg;
+      okBox.classList.add("show");
+      okBox.scrollIntoView({behavior: reduced ? "auto" : "smooth", block:"nearest"});
+    }
+
+    function openTg(){
+      var url = "https://t.me/LenaMenshikova17?text=" + encodeURIComponent(text);
+      var w = window.open(url, "_blank", "noopener");
+      if (w){
+        done("<b>Чат Telegram открыт — текст заявки уже вставлен.</b> Нажмите «Отправить». Если поле вдруг пустое, вставьте текст (Ctrl+V) — он скопирован. Отвечу лично.");
+      } else {
+        done("<b>Текст заявки скопирован.</b> Откройте <a href='" + url + "' target='_blank' rel='noopener'>чат в Telegram</a> — текст уже вставлен, нажмите «Отправить». Отвечу лично.");
+      }
+    }
+
+    function fallbackCopy(){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); openTg(); }
+      catch(e){
+        done("<b>Скопируйте текст заявки</b> и отправьте его в Telegram: <a href='https://t.me/LenaMenshikova17' target='_blank' rel='noopener'>t.me/LenaMenshikova17</a><br><br><span style='white-space:pre-wrap;font-family:monospace;font-size:12px'></span>");
+        okBox.querySelector("span").textContent = text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(openTg, fallbackCopy);
+    } else { fallbackCopy(); }
+  });
+})();
+</script>
+</body>
+</html>
